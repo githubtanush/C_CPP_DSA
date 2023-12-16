@@ -196,35 +196,63 @@
 // }
 
 
-//Compare two strings
-#include<stdio.h>
-int compare(char s[],char p[]){
-int i = 0;
-while(s[i]!='\0' && p[i]!='\0'){
-    if(s[i]==p[i]){
-        i++;
-    }
-    else if(s[i]>p[i]){
-        return 1;
-    }
-    else{
-        return -1;
-    }
-}
-if(s[i]==0 && p[i]==0)
-    return 0;
-if(s[i]==0)
-    return -1;
-if(p[i]==0)
-    return 1;
-}
+// //Compare two strings
+// #include<stdio.h>
+// int compare(char s[],char p[]){
+// int i = 0;
+// while(s[i]!='\0' && p[i]!='\0'){
+//     if(s[i]==p[i]){
+//         i++;
+//     }
+//     else if(s[i]>p[i]){
+//         return 1;
+//     }
+//     else{
+//         return -1;
+//     }
+// }
+// if(s[i]==0 && p[i]==0)
+//     return 0;
+// if(s[i]==0)
+//     return -1;
+// if(p[i]==0)
+//     return 1;
+// }
 
+// int main(){
+//     char s[1000],p[1000];
+//     printf("Enter the first string u want to compare : ");
+//     fgets(s,1000,stdin);
+//     printf("Enter the seconnd string u want to compare : ");
+//     fgets(p,1000,stdin);
+//     printf("%d",compare(s,p));
+//     return 0;
+// }
+
+
+
+//Write a function to sort city names
+#include<stdio.h>
+#include<string.h>
+void sort_strings(char city[][20],int n){
+    int i,round,r;
+    char temp[20];
+    for(round=1;round<=n-1;round++){
+        for(i=0; i<=n-1-round;i++){
+            r=strcmp(city[i],city[i+1]);
+            if(r>0){
+                strcpy(temp,city[i]);
+                strcpy(city[i],city[i+1]);
+                strcpy(city[i+1],temp);
+            }
+        }
+    }
+}
 int main(){
-    char s[1000],p[1000];
-    printf("Enter the first string u want to compare : ");
-    fgets(s,1000,stdin);
-    printf("Enter the seconnd string u want to compare : ");
-    fgets(p,1000,stdin);
-    printf("%d",compare(s,p));
+    char city[10][20]={"Ludhiana","Haridwar","Goraya","Agra","Bareilly","Ethawa","Himachal pradesh","Gorakhpur","dhigwara","haryana"};
+    sort_strings(city ,10);
+    for(int i=0;i<=9;i++){
+        puts(city[i]);
+    }
     return 0;
 }
