@@ -145,31 +145,31 @@
 //     return 0;
 // }
 
-//fibonnaci series
-#include<iostream>
-using namespace std;
-int fibonnaci(int n){
-    int n1 = -1, n2 = 1, n3=0,i;
-    for(int i = 0; n3 <= n;i++){   
+// //fibonnaci series
+// #include<iostream>
+// using namespace std;
+// int fibonnaci(int n){
+//     int n1 = -1, n2 = 1, n3=0,i;
+//     for(int i = 0; n3 <= n;i++){   
         
-        n3 = n1 + n2;
-        if(n==n3)
-            return 1;
-        n1 = n2;
-        n2 = n3;
-    }
-    return 0;
-}
+//         n3 = n1 + n2;
+//         if(n==n3)
+//             return 1;
+//         n1 = n2;
+//         n2 = n3;
+//     }
+//     return 0;
+// }
 
-int main(){
-    int n;
-    cout<<"Enter the number till u want to print the fibonnaci series : ";
-    cin>>n;
-    if(fibonnaci(n)==0){
-        cout<<"Given number is not in the fibonnaci series";
-    }
-    else{
-        cout<<"Given number is in the fibonnaci series";
-    }
-    return 0;
-}
+// int main(){
+//     int n;
+//     cout<<"Enter the number till u want to print the fibonnaci series : ";
+//     cin>>n;
+//     if(fibonnaci(n)==0){
+//         cout<<"Given number is not in the fibonnaci series";
+//     }
+//     else{
+//         cout<<"Given number is in the fibonnaci series";
+//     }
+//     return 0;
+// }
