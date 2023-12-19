@@ -185,3 +185,4 @@
 //     return 0;
 // }
 // //Data hiding and abstraction are two different things data hiding is restricting accessibility aap us member ko access hi nhi kar pa rah ho or abstraction yeh hai ki aap us member ko access krne se nhi rok rah ho aap bss chupa rah ho ki yeh kaaam kaise kr rah that is abstraction.
+//abstraction one meaning is also that you hiding details . it is a concept
