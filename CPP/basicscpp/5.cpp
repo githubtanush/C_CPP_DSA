@@ -68,3 +68,54 @@
 //     cout<<"\nArea of triangle for this base and height is : "<<area(h,m)<<endl;
 //     return 0;
 // }
+
+
+
+// // by function overloading find a method to get maximum of two numbers
+// #include<iostream>
+// using namespace std;
+// int max(int a, int b){
+//     if(a>b){
+//         return a;
+//     }
+//     return b;
+// }
+// float max(float c, float d){
+//     if(c>d){
+//         return c;
+//     }
+//     return d;
+// }
+// int main(){
+//     int a,b;
+//     cout<<"Enter two numbers for which u want to check that which is greater : ";
+//     cin>>a>>b;
+//     cout<<"\nAnswer is : "<<max(a,b);
+//     float c,d;
+//     cout<<"\nEnter two real numbers for which u want to check that which one is big : ";
+//     cin>>c>>d;
+//     cout<<"\nAnswer is : "<<max(c,d);
+//     return 0;
+// }
+
+
+// // by function overloading to add two numbers of different datatypes
+// #include<iostream>
+// using namespace std;
+// int sum(int a, int b){
+//    return a + b;
+// }
+// float sum(float c, float d){
+//     return c + d;
+// }
+// int main(){
+//     int a,b;
+//     cout<<"Enter two numbers for which u want to add: ";
+//     cin>>a>>b;
+//     cout<<"\nAnswer is : "<<sum(a,b);
+//     float c,d;
+//     cout<<"\nEnter two real numbers for which u want to add : ";
+//     cin>>c>>d;
+//     cout<<"\nAnswer is : "<<sum(c,d);
+//     return 0;
+// }
