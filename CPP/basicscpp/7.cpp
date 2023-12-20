@@ -220,21 +220,21 @@
 // }
 
 
-//In the string method 2
-// #include<iostream>
-// #include<string.h>
-// using namespace std;
-// void printsubstring(char str[],int startindex,int endindex=-1){
-//     if(endindex==-1){
-//         endindex=strlen(str);
-//     }
-//     for(int i = startindex; i <endindex;i++){
-//         cout<<str[i];
-//     }
-// }
-// int main(){
-//     char str[]="MySirG education services";
-//         printsubstring(str,3);
-//         cout<<endl;
-//     return 0;
-// }
+// In the string method 2
+#include<iostream>
+#include<string.h>
+using namespace std;
+void printsubstring(char str[],int startindex,int endindex=-1){
+    if(endindex==-1){
+        endindex=strlen(str);
+    }
+    for(int i = startindex; i <endindex;i++){
+        cout<<str[i];
+    }
+}
+int main(){
+    char str[]="MySirG education services";
+        printsubstring(str,3);
+        cout<<endl;
+    return 0;
+}
