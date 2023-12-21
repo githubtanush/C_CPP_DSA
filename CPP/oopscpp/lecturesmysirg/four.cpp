@@ -87,35 +87,99 @@
 //Initializer list resolve name  conflict issue
 // if there is some class a and in this class there has const member variable without not use of initializer list you will not use the 
 //const member variable 
+// #include<iostream>
+// using namespace std;
+// class Complex{
+//     private:
+//         int a,b;
+//         // int &y;
+//         const int k;
+
+//     public:
+//     //Default ctor
+//         Complex():k(5),a(0),b(0){};
+//     //Parametrized ctor
+//         // Complex(int x,int y){
+//         //     cout<<"Two argument ctor called...."<<endl;
+//         //     a = x;
+//         //     b = y;
+//         // }
+
+//     //By initializer list
+//      Complex(int a,int b): a(a),b(b) 
+//      { };
+//     // Parametrized ctor of 1 argument
+//         Complex(int x){
+//             cout<<"One argument ctor called...."<<endl;
+//             a = x;
+//             b = 0;
+//         }
+    
+//     //Copy ctor
+//     Complex(Complex &C){
+//         cout<<"Copy ctor called...."<<endl;
+//         a = C.a;
+//         b = C.b;
+//     }
+//         void setData(int x,int y){
+//             a = x;
+//             b = y;
+//         }
+//         void showData(){
+//             cout<<"a = "<<a<<" b = "<<b<<"i"<<endl;
+//         }
+//         Complex add(Complex C){
+//             Complex temp;
+//             temp.a = a + C.a;
+//             temp.b = b + C.b;
+//             return temp;
+//         }
+
+// };
+// int main(){
+//     Complex c1(5,4),c2(7),c4,c5;
+//     Complex c3 = c1;
+//     c1.showData();
+//     c2.showData();
+//     c3.showData();
+//     c4.showData();
+//     c5.showData();
+//     return 0;
+// }
+
+
+
+
+
+
+
+//Operator Overloading
 #include<iostream>
 using namespace std;
 class Complex{
     private:
         int a,b;
-        // int &y;
-        const int k;
 
     public:
     //Default ctor
-        Complex():k(5),a(0),b(0){};
+        Complex(){
+            cout<<"Zero argument ctor called...."<<endl;
+            a = 0; 
+            b = 0;
+        }
     //Parametrized ctor
-        // Complex(int x,int y){
-        //     cout<<"Two argument ctor called...."<<endl;
-        //     a = x;
-        //     b = y;
-        // }
-
-    //By initializer list
-     Complex(int a,int b): a(a),b(b) 
-     { };
+        Complex(int x,int y){
+            cout<<"Two argument ctor called...."<<endl;
+            a = x;
+            b = y;
+        }
     // Parametrized ctor of 1 argument
         Complex(int x){
             cout<<"One argument ctor called...."<<endl;
             a = x;
             b = 0;
         }
-    
-    //Copy ctor
+
     Complex(Complex &C){
         cout<<"Copy ctor called...."<<endl;
         a = C.a;
@@ -128,21 +192,42 @@ class Complex{
         void showData(){
             cout<<"a = "<<a<<" b = "<<b<<"i"<<endl;
         }
-        Complex add(Complex C){
+        
+        // C language mein yhi hai ki hm digit , alphabet ya underscore se hi rkh skte hai 
+        // but in cpp there is new rule that if we use operator symbol as new name then only add operator keyword before this keyword
+        // then u can use it 
+
+        Complex operator+(Complex C){//yeh function hi hai technically bss use operator ka kiya hai
             Complex temp;
             temp.a = a + C.a;
             temp.b = b + C.b;
             return temp;
         }
 
+        Complex operator-(){
+            Complex temp;
+            temp.a = -a;
+            temp.b = -b;
+            return temp;
+        }
+
 };
 int main(){
-    Complex c1(5,4),c2(7),c4,c5;
+    Complex c1(5,4),c2(7),c4,c5,c7;
     Complex c3 = c1;
+    Complex c6;
+    c6=c1;
     c1.showData();
     c2.showData();
     c3.showData();
     c4.showData();
+    //c1 ne operator plus ko call kiya or c2 usme as an argument pass hua
+    // c5 = c1.operator+(c2);//Now call like this bss operator keyword and operator ka sign bnana
+
+    c5 = c1 + c2;//you also call like this because operator ka 2 ways hota hai yeh 1st class mein bhi discuss hua tha
+    //with dot or without dot 
+    c7 = -c1;
+    c7.showData();
     c5.showData();
     return 0;
 }
