@@ -76,3 +76,73 @@
 //     c5.showData();
 //     return 0;
 // }
+
+
+
+
+
+//Initializer list - ctor has initialize by both ways simply ctor or initializer list
+// but this has one advantage that if u written like this a(a),b(b),c(c) then this thing u also written with initializer list
+// but agrr yhi ham ctor ka andar kara to voh assignment ka dono taraf local treat krega to hma pata hi nhi ki kab assign hoga
+//Initializer list resolve name  conflict issue
+// if there is some class a and in this class there has const member variable without not use of initializer list you will not use the 
+//const member variable 
+#include<iostream>
+using namespace std;
+class Complex{
+    private:
+        int a,b;
+        // int &y;
+        const int k;
+
+    public:
+    //Default ctor
+        Complex():k(5),a(0),b(0){};
+    //Parametrized ctor
+        // Complex(int x,int y){
+        //     cout<<"Two argument ctor called...."<<endl;
+        //     a = x;
+        //     b = y;
+        // }
+
+    //By initializer list
+     Complex(int a,int b): a(a),b(b) 
+     { };
+    // Parametrized ctor of 1 argument
+        Complex(int x){
+            cout<<"One argument ctor called...."<<endl;
+            a = x;
+            b = 0;
+        }
+    
+    //Copy ctor
+    Complex(Complex &C){
+        cout<<"Copy ctor called...."<<endl;
+        a = C.a;
+        b = C.b;
+    }
+        void setData(int x,int y){
+            a = x;
+            b = y;
+        }
+        void showData(){
+            cout<<"a = "<<a<<" b = "<<b<<"i"<<endl;
+        }
+        Complex add(Complex C){
+            Complex temp;
+            temp.a = a + C.a;
+            temp.b = b + C.b;
+            return temp;
+        }
+
+};
+int main(){
+    Complex c1(5,4),c2(7),c4,c5;
+    Complex c3 = c1;
+    c1.showData();
+    c2.showData();
+    c3.showData();
+    c4.showData();
+    c5.showData();
+    return 0;
+}
