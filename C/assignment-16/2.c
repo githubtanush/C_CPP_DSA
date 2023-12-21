@@ -131,35 +131,93 @@
 //     return 0;
 // }
 
-//matrix
+
+
+
+// //Matrix add
+// #include<stdio.h>
+// void take_input(int arr[][3]){
+//     for(int i = 0; i < 3 ;i++){
+//         for(int j = 0; j < 3;j++){
+//             printf("Enter value for a[%d][%d]",i,j);
+//             scanf("%d",&arr[i][j]);
+//             printf("\n");
+//         }
+//     }
+// }
+// void print_output(int arr[][3]){
+//     for(int i = 0; i < 3 ;i++){
+//         for(int j = 0; j < 3;j++){
+//             printf("%d ",arr[i][j]);
+//         }
+//         printf("\n");
+//     }
+// }
+
+// void print_add_array(int arr[][3],int brr[][3]){
+//     for(int i = 0; i < 3;i++){
+//         for(int j = 0; j < 3;j++){
+//             printf("%d ",arr[i][j]+brr[i][j]);
+//         }
+//         printf("\n");
+//     }
+// }
+// int main(){
+//     int arr[3][3];
+//     int brr[3][3];
+//     printf("Enter the value for first 3 * 3 matrix : ");
+//     take_input(arr);
+//     print_output(arr);
+//     printf("Enter the value for second 3 * 3 matrix : ");
+//     take_input(brr);
+//     print_output(brr);
+//     printf("The resulting matrix after adding the value of both the matrices is : \n");
+//     print_add_array(arr,brr);
+//     return 0;
+// }
+
+
+//Matrix multiplication
 #include<stdio.h>
-void input(int a[1000][1000],int n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            scanf("%d",&a[i][j]);
+void take_input(int arr[][3]){
+    for(int i = 0; i < 3 ;i++){
+        for(int j = 0; j < 3;j++){
+            printf("Enter value for a[%d][%d]",i,j);
+            scanf("%d",&arr[i][j]);
         }
     }
 }
-void output(int a[1000][1000],int n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            printf("%d ",a[i][j]);
+void print_output(int arr[][3]){
+    for(int i = 0; i < 3 ;i++){
+        for(int j = 0; j < 3;j++){
+            printf("%d ",arr[i][j]);
         }
+        printf("\n");
+    }
+}
+
+void print_mul_array(int arr[][3],int brr[][3],int prod[][3]){
+    for(int i = 0; i < 3;i++){
+        for(int j = 0; j < 3;j++){
+            for(int m = 0; m < 3; m++){
+            prod[i][j]=prod[i][j]+(arr[i][m]*brr[m][j]);
+            }
+            }
+        printf("\n");
     }
 }
 int main(){
-    int a[1000][1000];
-    int n;
-    printf("Enter the dimensions of row and column that how many big matrix u want to print : ");
-    scanf("%d",&n);
-    int i,j;
-    for(int i = 0; i < 2;i++){
-    input(a,n);
-    }
-    for(int i = 0; i < 2;i++){
-    output(a,n);
-    }
-
-    getchar();
+    int arr[3][3];
+    int brr[3][3];
+    int prod[3][3];
+    printf("Enter the value for first 3 * 3 matrix : ");
+    take_input(arr);
+    print_output(arr);
+    printf("Enter the value for second 3 * 3 matrix : ");
+    take_input(brr);
+    print_output(brr);
+    printf("The resulting matrix after adding the value of both the matrices is : \n");
+    print_mul_array(arr,brr,prod);
+    print_output(prod);
     return 0;
 }
