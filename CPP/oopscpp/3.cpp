@@ -1,3 +1,4 @@
+//Assignment = 10
 // //class cuboid make and access all by instance member variable 
 // //mainly this is ctor
 // #include<iostream>
