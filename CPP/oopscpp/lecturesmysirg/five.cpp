@@ -131,3 +131,69 @@
 
 
 
+// #include<iostream>
+// using namespace std;
+// class Complex{
+//     private:
+//         int a,b;
+//     public:
+//         void setData(int a,int b){
+//             this->a = a;
+//             this->b = b;
+//         }
+//         void ShowData(){
+//             cout<<"a = "<<a<<" b = "<<b<<endl;
+//         }
+//         Complex SumGreater(Complex C){
+//             if((a + b)>C.a+C.b){
+//                 //hme c1 return krna hai because hma as a object pass krna hai 
+//                 //or isme hmm this ka use nhi krenge kyuki this se to member function call hota hai na
+//                 //to socho ki hmm object ko kaise pass kre
+//                 return (*this);
+//             }
+//             else{
+//                 return C;
+//             }
+//         }
+// };
+// int main(){
+//     Complex c1,c2,c3;
+//     c1.setData(3,9);
+//     c2.setData(2,3);
+//     c3 = c1.SumGreater(c2);
+//     c3.ShowData();
+
+//     c1.ShowData();
+//     return 0;
+// }
+
+
+
+//Memory leak - assume one situation that you go for a trip and at that you store your bag in one cabin 
+//and they give you token of that locker now u can access that locker only by this token then suppose if u lost that token
+//then u can access that locker?
+//Simply answer is no so that is a dangerous situation where u can access your locker and also the shopkeeper locker 
+//is not free for storing another bag or luggage so at that shopkeeper has lost there one memory space so it is 
+//called memory leak
+
+
+//Null pointer - easily you think that you close your eyes and then u think that you does not see anything
+//but you can see your internal layer of your eyes so easily you can relate it 
+//when we assigining any pointer to 0 so it means that this is not access any location but reality is that they access nothing
+
+//dangling pointer -  if we make one pointer p which is assigning one block address and if we write delete p then it free the memory location
+//of p but that not means that this is free the pointer value still the address has store in it it means that dangling pointer is that pointer
+//which points the valid location  but now its location(memory) is free(luggage is taken from locker) but pointer still points that location
+//is called dangling pointer.
+//it is like that  in your home there is T.v and now t.v has been stolen so what are you doing with remote if T.v has stolen
+
+//wild pointer/generic pointer/uniinitialized pointer -  unknown type ke block ka address kisi bhi type(primitive) 
+//ka address rkh skta (like int,float,structure,char ) it means that it is point any unknown location
+//means we say that garbage value 
+
+
+
+//wild pointer mein garbage value ke karan vo initialize ho rah hai 
+//or dangling pointer yeh hai ki pehla tha kisi important location ka result ab vo location free ho chuki hai
+//esliye best practice yeh maani jaati hai ki jeisi hi location free hoti hai sath mein hi pointer ko null mark krdo
+//like this delete p; p=NULL;
