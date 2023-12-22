@@ -99,43 +99,43 @@
 // }
 
 
-//class number pointer vali class aa gyi dosto
-#include<iostream>
-using namespace std;
-class Numbers{
-    private:
-    int size;
-    int *arr;
+// //class number pointer vali class aa gyi dosto
+// #include<iostream>
+// using namespace std;
+// class Numbers{
+//     private:
+//     int size;
+//     int *arr;
 
-    public:
-    Numbers(){
-        size = 0;
-        *arr = 0;
-    }
-    Numbers(int n){
-        size = n;
-        arr = new int[size]; 
-    }
-    ~Numbers(){
-        delete []arr;
-    }
-    Numbers(Numbers &n){
-        size = n.size;
-        arr=new int[size];
-        for(int i = 0; i < size;i++){
-            arr[i]=n.arr[i];
-        }
-    }
-    void showData(){
-    cout<<"Size is : "<<size;
-}
+//     public:
+//     Numbers(){
+//         size = 0;
+//         *arr = 0;
+//     }
+//     Numbers(int n){
+//         size = n;
+//         arr = new int[size]; 
+//     }
+//     ~Numbers(){
+//         delete []arr;
+//     }
+//     Numbers(Numbers &n){
+//         size = n.size;
+//         arr=new int[size];
+//         for(int i = 0; i < size;i++){
+//             arr[i]=n.arr[i];
+//         }
+//     }
+//     void showData(){
+//     cout<<"Size is : "<<size;
+// }
 
-};
-int main(){
-    Numbers n1(8);
-    Numbers n2 = n1;
-    n1.showData();
-    cout<<endl;
-    n2.showData();
-    return 0;
-}
+// };
+// int main(){
+//     Numbers n1(8);
+//     Numbers n2 = n1;
+//     n1.showData();
+//     cout<<endl;
+//     n2.showData();
+//     return 0;
+// }
