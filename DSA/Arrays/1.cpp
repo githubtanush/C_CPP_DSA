@@ -8,6 +8,7 @@ class Array{
         int lastIndex;
     
     public:
+        Array();
         Array(int size);
         bool isEmpty();
         bool isFull();
@@ -20,7 +21,14 @@ class Array{
         int count();
         ~Array();
         int find(int);
+        Array(Array &);
+        Array& operator=(Array &);
 };
+Array::Array(){
+    capacity=0;
+    lastIndex=-1;
+    ptr = new int[capacity];
+}
 Array::Array(int size){
     if(size>0){
     capacity = size;
@@ -106,7 +114,30 @@ int Array::find(int data){
     }
     return -1;
 }
-
+Array::Array(Array &arr){//deep copy very important
+    cout<<"Copy ctor called.... deep copy";
+    capacity = arr.capacity;
+    lastIndex = arr.lastIndex;
+    ptr = new int[capacity];
+    for(int i = 0 ; i <= lastIndex;i++){
+            ptr[i]=arr.ptr[i];
+    }
+}
+Array& Array::operator=(Array &arr){//why return type is refrence why does not return object why return refrence?????
+// return hone ke liye object ki ek or copy bnegi then it says infinite calls but dure to this refrence object does not occur infinite call
+//So return with refrence
+    if(this != &arr){
+        if(ptr!=NULL)
+        delete []ptr;
+    capacity = arr.capacity;
+    lastIndex = arr.lastIndex;
+    ptr = new int[capacity];
+    for(int i = 0 ; i <= lastIndex;i++){
+            ptr[i]=arr.ptr[i];
+    }
+    }
+    return *this;
+}
 int main(){
     Array a1(8);
     a1.append(4);
@@ -123,5 +154,14 @@ int main(){
     a1.show();
     int m = a1.getElement(5);
     cout<<endl<<m;
+    Array a2 = a1;
+    a2.show();
+    Array a3;
+    a3 = a1;
+    cout<<endl;
+    a3.show();
+    a1 = a1;
+    cout<<endl;
+    a1.show();
     return 0;
 }
