@@ -309,7 +309,7 @@ Array& Array::operator=(Array &a){
     return *this;
 }
 int main(){
-    Array a(7);
+    Array a(7),a1(7);
     a.append(6);
     a.append(36);
     a.append(86);
@@ -319,5 +319,8 @@ int main(){
     a.insert(3,8);
     a.deleteElement(3);
     a.show();
+    a1 = a;
+    cout<<endl;
+    a1.show();
     return 0;
 }
