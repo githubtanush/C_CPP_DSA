@@ -17,7 +17,10 @@ class SLL{
         void insertAtlast(int);
         node* search(int);
         void insertAfter(node* , int);
-
+        void deletefirst();
+        void deletelast();
+        void deleteNode(int);
+        ~SLL();
 };
 SLL::SLL(){
     start = NULL;
@@ -58,11 +61,65 @@ node* SLL::search(int data){
     return NULL;
 }
 void SLL::insertAfter(node *temp, int data){
-
+    node *n;
+    if(temp!=NULL){
+        n = new node;
+        n->item = data;
+        n->next = temp->next;
+        temp->next = n;
+    }
 }
-
-
-
+void SLL::deletefirst(){
+    node *t;
+    if(start){
+        t = start;
+        start = start -> next;
+        delete t;
+    }
+}
+void SLL::deletelast(){
+    node *t;
+    if(start){
+        t = start;
+        if(t->next = NULL){
+            delete t;
+            start = NULL;
+        }
+        else{
+            while(t->next->next!=NULL){
+                t = t -> next;
+            }
+            delete t->next;
+            t->next = NULL;
+        }
+    }
+}
+void SLL::deleteNode(int data){
+    node *t,*temp;
+    if(start){
+        t = start;
+        if(t->item == data){
+            start = start->next;
+            delete t;
+        }
+        else{
+            while(t->next != NULL){
+                if(t->next->item==data){
+                    temp=t->next;
+                    t->next = temp->next;
+                    delete temp;
+                    break; 
+                }
+                t=t->next;
+            }
+        }
+    }
+}
+SLL::~SLL(){
+    while(start){
+        deletefirst();
+    }
+}
 int main(){
     return 0;
 }
