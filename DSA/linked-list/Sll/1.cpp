@@ -46,9 +46,9 @@ void SLL::insertion_at_end(int data){
         start = n;
     else{
         t = start;
-    while(t->next!=NULL)
-        t = t->next;
-    t->next = NULL;
+        while(t->next!=NULL)
+            t = t->next;
+    t->next = n;
     }
 }
 node* SLL::search(int data){
@@ -81,7 +81,7 @@ void SLL::deletelast(){
     node *t;
     if(start){
         t = start;
-        if(t->next = NULL){
+        if(t->next == NULL){
             delete t;
             start = NULL;
         }
@@ -98,7 +98,7 @@ void SLL::deleteNode(int data){
     node *t,*temp;
     if(start){
         t = start;
-        if(t->item=data){
+        if(t->item==data){
             start = start->next;
             delete t;
         }
@@ -124,8 +124,8 @@ SLL::~SLL(){
 void SLL::show(){
     node *t;
     t = start;
-    while(t!= NULL){
-        cout<<t->item<<" ";
+    while(t != NULL){
+        cout<<t->item<<"->";
         t = t->next;
     }
 }
@@ -143,6 +143,10 @@ int main(){
     s1.insertion_at_beginning(34);
     s1.insertion_at_beginning(32);
     s1.insertion_at_beginning(99);
+    s1.insertion_at_end(78);
+    s1.insertion_at_end(87);
+    node *t = s1.search(99);
+    s1.insertafter(t,4);
     s1.show();
     return 0;
 }
