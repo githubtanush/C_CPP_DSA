@@ -5,75 +5,80 @@ struct node{
     node* next;
 };
 class SLL{
-    private:
-    node* start;
-
-    public:
-        SLL();
-        void insertion_at_beginning(int);//hm data argument mein hi kyu de hmm user se data input krwa lenge
-        //hmm input mein data kyu  nhi le rah hai
-        //kyuki programmer jab data ko enter krta hai tab us  programmer ko decide krna do na ki kaha se data lena hai
-        //user se kisi file se ya kisi or jagah se
-        //insertion_at_beginning code is just at service for programmer yeh programmer ko decide krne do user se data lena hai ya nhi
-        //agar usne user se data lena hai to vo lega na to tum tension free rho
-        void insertion_at_end(int);
-        node* search(int);
-        void insertafter(node*,int);
-        void show();
-        void deletefirst();
-        void deletelast();
-        void deleteNode(int);
-        ~SLL();
+        private:
+            node *start;
         
-
+        public:
+            SLL();
+            void insertAtStart(int);
+            void insertAtLast(int);
+            node* search(int);
+            void insertionAtSpecific(node*,int);
+            void deletefirst();
+            void deletelast();
+            void deletespecific(int);
+            void show();
+            ~SLL();
 };
 SLL::SLL(){
     start = NULL;
 }
-void SLL::insertion_at_beginning(int data){
-            node *n;
-            n = new node;
-            n->item = data;
-            n->next = start;
-            start = n;
+void SLL::insertAtStart(int data){
+    node *n;
+    n = new node;
+    n->item = data;
+    n->next = start;
+    start = n;
 }
-void SLL::insertion_at_end(int data){
-    node *n,*t;
-    n = new node[data];
+void SLL::insertAtLast(int data){
+    node *n;
+    n = new node;
     n->item = data;
     n->next = NULL;
     if(start==NULL)
-        start = n;
+        start=n;
     else{
+        node *t;
         t = start;
-        while(t->next!=NULL)
+        while(t->next!=NULL){
             t = t->next;
-    t->next = n;
+        }
+        t->next = n;
+    }
+}
+void SLL::show(){
+    node *t;
+    t = start;
+    while(t!=NULL){
+        cout<<t->item<<"->";
+        t = t->next;
     }
 }
 node* SLL::search(int data){
     node *t;
-    t=start;
-    while(t!=NULL){
-        if(t->item == data)
-            return t;
-        t = t->next;
-    }
-}
-void SLL::insertafter(node* temp,int data){
-    if(temp!=NULL){
+    t = start;
+            while(t!=NULL){
+                if(t->item==data){
+                    return t;
+                }
+                t = t->next;
+            }
+            return NULL;
+        }
+void SLL::insertionAtSpecific(node* temp,int data){
     node *n;
-    n = new node;
-    n->item = data;
-    n->next = temp->next;
-    temp->next = n;
+    if(temp!=NULL){
+        n = new node;
+        n->item = data;
+        n->next = temp->next;
+        temp->next = n;
     }
 }
 void SLL::deletefirst(){
-    node* t;
+    node *t;
+    t = start;
     if(start){
-        t = start;
-        start = start->next;
+        start=start->next;
         delete t;
     }
 }
@@ -81,72 +86,60 @@ void SLL::deletelast(){
     node *t;
     if(start){
         t = start;
-        if(t->next == NULL){
-            delete t;
-            start = NULL;
+        if(t->next==NULL){
+                start = start->next;
+                delete t;
         }
         else{
             while(t->next->next!=NULL){
-                t=t->next;
+                t = t->next;
             }
-            delete  t->next;
+            delete t->next;
             t->next = NULL;
         }
     }
 }
-void SLL::deleteNode(int data){
+void SLL::deletespecific(int data){
     node *t,*temp;
     if(start){
         t = start;
         if(t->item==data){
-            start = start->next;
+            start = start -> next;
             delete t;
         }
         else{
-            while(t->next->next != NULL)
-                {
-                    if(t->next->item==data){
-                        temp = t->next;
-                        t->next = temp->next;
-                        delete temp;
-                        break;
-                    }
-                    t = t->next;
+            while(t->next!=NULL){
+                if(t->next->item == data){
+                    temp = t->next;
+                    t->next = temp->next;
+                    delete temp;
+                    break;
                 }
+                t = t->next;
+            }
         }
     }
 }
 SLL::~SLL(){
-    while(start){
+    while(start)
         deletefirst();
-    }
 }
-void SLL::show(){
-    node *t;
-    t = start;
-    while(t != NULL){
-        cout<<t->item<<"->";
-        t = t->next;
-    }
-}
-
-
-
-
-
-
-
-
 int main(){
-    SLL s1;
-    s1.insertion_at_beginning(8);
-    s1.insertion_at_beginning(34);
-    s1.insertion_at_beginning(32);
-    s1.insertion_at_beginning(99);
-    s1.insertion_at_end(78);
-    s1.insertion_at_end(87);
-    node *t = s1.search(99);
-    s1.insertafter(t,4);
-    s1.show();
+    SLL s;
+    s.insertAtStart(43);
+    s.insertAtStart(3);
+    s.insertAtStart(27);
+    s.insertAtStart(39);
+    s.insertAtStart(48);
+    s.insertAtLast(34);
+    s.insertAtLast(78);
+    s.insertAtLast(32);
+    node *f=s.search(78);
+    cout<<f<<" ";
+    s.insertionAtSpecific(f,98);
+    s.deletefirst();
+    s.deletelast();
+    s.deletespecific(27);
+    s.show();
     return 0;
 }
