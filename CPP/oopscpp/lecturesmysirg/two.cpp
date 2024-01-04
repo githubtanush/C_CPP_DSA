@@ -1,5 +1,7 @@
-// encapsulation mein structure or class kisi ka bhi use krr skte hai but class ko jada oops oriented maana jata hai kyuki structure c mein bhi tha
-//structure ko hmna cpp mein bhi chlna ko allow kiya taaki hm c  vala sb kuch use kr ske cpp mein that is called backward compatibility
+// encapsulation mein structure or class kisi ka bhi use krr skte hai 
+//but class ko jada oops oriented maana jata hai kyuki structure c mein bhi tha
+//structure ko hmna cpp mein bhi chlna ko allow kiya 
+//taaki hm c  vala sb kuch use kr ske cpp mein that is called backward compatibility
 //backward compatability in which lower version has also allowed to work
 //esliye class ko jada recommend kiya jaata hai kyuki structure c mein bhi tha so c is most oops oriented
 

@@ -1,6 +1,11 @@
 // #include<iostream>
 // using namespace std;
-// int add(int,int,int=0);//Default argument helps us to that we donot create another function and function treat 1 less argument case automatically.and one more thing is that when we written =0 in 2nd int then it means we set second argument default value is zero and it has also one restriction if i was marking 0 default value as y then z must be zero socho ek daaga mein moti piro rah hai pehla hai phir dusra nhi hai phir sida tisra hai asa ho skta hai kya kehna ka matlab yeh hai jaah hmna default bna diyan to uske baad valo ko bhi default bnana compulsory hai
+// int add(int,int,int=0);//Default argument helps us to that we donot create another function 
+////and function treat 1 less argument case automatically.and one more thing is that when we written =0 in 2nd 
+////int then it means we set second argument default value is zero and it has also one restriction if i was marking 0 
+////default value as y then z must be zero socho ek daaga mein moti piro rah hai pehla hai phir dusra nhi hai 
+////phir sida tisra hai asa ho skta hai kya kehna ka matlab yeh hai jaah hmna default bna diyan to uske baad valo 
+////ko bhi default bnana compulsory hai
 // int main(){
 //     int a,b;
 //     cout<<"Enter two numbers : ";
@@ -49,7 +54,8 @@
 
 
 
-// //polymorphism is a very good process when big project is played c is a syntax based language on the other hand cpp is more about the conceptual things
+// //polymorphism is a very good process when big project is played c is a syntax based language on the other hand 
+//cpp is more about the conceptual things
 // #include<iostream>
 // using namespace std;
 // int area(int , int );
@@ -184,5 +190,8 @@
 //     b2.display();//kisi ko bhi pata lag rah hai ki input book kaise chl rah hai display kaise chl rah hai nhi na to yeh hota hai abstraction. or yeh to achi baat hai main vala ko input book or display function kaise kaam kr rah hai yeh janna hi kyu hai khud ka knowledge bnana ke liye thori use salary mil rhi hai jitna use jan na hai vo jankar aaga bda bass unnecessary details usko jan ni kyu hai esa hi kehta hai abstraction or yhi eski need hai jeise real life example car ka jo gear vala dnda hai tumhe gear dalna hai na bss yeh to tumhara liye important hai yeh thori tumhara liye important hai ki usko kaise bnaya
 //     return 0;
 // }
-// //Data hiding and abstraction are two different things data hiding is restricting accessibility aap us member ko access hi nhi kar pa rah ho or abstraction yeh hai ki aap us member ko access krne se nhi rok rah ho aap bss chupa rah ho ki yeh kaaam kaise kr rah that is abstraction.
+// //Data hiding and abstraction are two different things data hiding is restricting accessibility 
+//aap us member ko access hi nhi kar pa rah ho or 
+//abstraction yeh hai ki aap us member ko access krne se nhi rok rah ho aap 
+//bss chupa rah ho ki yeh kaaam kaise kr rah that is abstraction.
 //abstraction one meaning is also that you hiding details . it is a concept
