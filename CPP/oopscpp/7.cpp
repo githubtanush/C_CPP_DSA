@@ -51,23 +51,8 @@
 // }
 
 
-
 #include<iostream>
 using namespace std;
-class Complex{
-    private:
-        int a,b;
-    public:
-        void setData(int x,int y){
-            a = x;
-            b = y;
-        }
-        void printData(){
-            cout<<" a = "<< a << " b = "<<b<<endl;
-        }
-};
 int main(){
-    Complex x;
-    x.setData(7,8);
-    x.printData();
+    cout<<"Depression free time start from tomorrow";
 }
