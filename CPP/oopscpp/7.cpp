@@ -53,8 +53,22 @@
 
 #include<iostream>
 using namespace std;
+class Complex{
+    private:
+        int a,b;
+
+    public:
+        void setData(int x,int y){
+            a = x;
+            b = y;
+        }
+        void showData(){
+            cout<<a<<"+"<<b<<"i";
+        }
+};
 int main(){
-    cout<<"Depression free time start from tomorrow";
-    cout<<"Sunil ka bday tha";
+    Complex b;
+    b.setData(87,89);
+    b.showData();
     return 0;
 }
